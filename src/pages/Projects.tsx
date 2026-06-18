@@ -20,7 +20,7 @@ const ProjectCard = ({ project, featured = false }: { project: Project; featured
       ) : (
         <div className="text-center text-muted-foreground">
           <ImageIcon className="w-10 h-10 mx-auto mb-2 opacity-60" />
-          <p className="text-sm">مساحة مخصصة لإضافة صورة المشروع</p>
+          <p className="text-sm">Space for project image</p>
         </div>
       )}
     </div>
@@ -36,11 +36,11 @@ const ProjectCard = ({ project, featured = false }: { project: Project; featured
       )}
       {project.link ? (
         <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-accent font-semibold hover:underline">
-          فتح المشروع <ExternalLink className="w-4 h-4" />
+          Open Project <ExternalLink className="w-4 h-4" />
         </a>
       ) : (
         <span className="inline-flex items-center gap-1.5 text-muted-foreground text-sm">
-          [مكان مخصص لإضافة الرابط التشعبي]
+          [Space to add project link]
         </span>
       )}
     </div>
@@ -65,7 +65,7 @@ const Section = ({
       </div>
       <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
     </div>
-    {subtitle && <p className="text-muted-foreground mb-6 mr-14">{subtitle}</p>}
+    {subtitle && <p className="text-muted-foreground mb-6 ml-14">{subtitle}</p>}
     <div className="grid md:grid-cols-2 gap-6">{children}</div>
   </section>
 );
@@ -74,49 +74,49 @@ const Projects = () => {
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">
       <header className="max-w-3xl mb-12">
-        <p className="text-accent font-semibold mb-2">المشاريع</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">معرض الأعمال</h1>
+        <p className="text-accent font-semibold mb-2">Projects</p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Portfolio of Work</h1>
         <p className="text-lg text-muted-foreground leading-loose">
-          مجموعة من المشاريع الأكاديمية والتطبيقية التي تعكس مساري في هندسة الشبكات وأنظمة الاتصالات.
+          A collection of academic and applied projects that reflect my journey in network and communication systems engineering.
         </p>
       </header>
 
-      <Section icon={GraduationCap} title="مشروع التخرج" subtitle="مشروع بارز يلخّص رحلتي الأكاديمية">
+      <Section icon={GraduationCap} title="Graduation Project" subtitle="A flagship project capturing my academic journey">
         <ProjectCard
           featured
           project={{
-            title: "[عنوان مشروع التخرج]",
+            title: "[Graduation Project Title]",
             description:
-              "صندوق مخصص لشرح فكرة المشروع، الأهداف، التقنيات المستخدمة، التحديات، والنتائج. يمكنكِ هنا توثيق تفاصيل المناقشة والإنجازات الرئيسية.",
-            tags: ["شبكات", "أمن", "تصميم نظام"],
+              "A dedicated space to describe the project's idea, objectives, technologies, challenges, and results. Document defense highlights and main achievements here.",
+            tags: ["Networking", "Security", "System Design"],
           }}
         />
       </Section>
 
-      <Section icon={Briefcase} title="مشاريع التدريب" subtitle="نتاج فترة التدريب التعاوني (٧ أشهر)">
+      <Section icon={Briefcase} title="Training Projects" subtitle="Output from the 7-month cooperative training">
         <ProjectCard
           project={{
-            title: "تطبيق ويب مركزي لإدارة وتسجيل البيانات",
+            title: "Centralized Web Application for Data Management",
             description:
-              "تطوير منصة ويب لإدارة وتسجيل البيانات بشكل مركزي، تشمل واجهات للمستخدم، قواعد بيانات، وأدوات إدارية تسهّل سير العمل.",
+              "Developed a centralized web platform for managing and recording data, including user interfaces, databases, and admin tools that streamline workflows.",
             tags: ["Web App", "Database", "UI"],
           }}
         />
         <ProjectCard
           project={{
-            title: "ملف تحليل بيانات مركز التدريب وتطوير الأنظمة",
+            title: "Training Center Data Analysis Report",
             description:
-              "تحليل شامل لبيانات المركز يهدف إلى استخراج مؤشرات أداء ورؤى تساعد في اتخاذ قرارات تشغيلية مدروسة.",
+              "A comprehensive analysis of the center's data aimed at extracting performance indicators and insights to support informed operational decisions.",
             tags: ["Data Analysis", "Reporting", "Insights"],
           }}
         />
       </Section>
 
-      <Section icon={BookOpen} title="المشاريع الأكاديمية" subtitle="أبرز المشاريع خلال فترة الدراسة الجامعية">
-        <ProjectCard project={{ title: "[مشروع شبكي ١]", description: "وصف موجز للمشروع: الهدف، التصميم، الأدوات، النتائج." }} />
-        <ProjectCard project={{ title: "[مشروع شبكي ٢]", description: "وصف موجز للمشروع: الهدف، التصميم، الأدوات، النتائج." }} />
-        <ProjectCard project={{ title: "[مشروع اتصالات]", description: "وصف موجز للمشروع: الهدف، التصميم، الأدوات، النتائج." }} />
-        <ProjectCard project={{ title: "[مشروع أمن شبكات]", description: "وصف موجز للمشروع: الهدف، التصميم، الأدوات، النتائج." }} />
+      <Section icon={BookOpen} title="Academic Projects" subtitle="Highlights from my university coursework">
+        <ProjectCard project={{ title: "[Networking Project 1]", description: "Brief description: goal, design, tools, and results." }} />
+        <ProjectCard project={{ title: "[Networking Project 2]", description: "Brief description: goal, design, tools, and results." }} />
+        <ProjectCard project={{ title: "[Communications Project]", description: "Brief description: goal, design, tools, and results." }} />
+        <ProjectCard project={{ title: "[Network Security Project]", description: "Brief description: goal, design, tools, and results." }} />
       </Section>
     </div>
   );

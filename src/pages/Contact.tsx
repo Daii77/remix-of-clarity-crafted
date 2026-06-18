@@ -7,9 +7,9 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 const schema = z.object({
-  name: z.string().trim().min(1, "الرجاء إدخال الاسم").max(100),
-  email: z.string().trim().email("البريد الإلكتروني غير صالح").max(255),
-  message: z.string().trim().min(1, "الرجاء كتابة رسالة").max(1000, "الحد الأقصى 1000 حرف"),
+  name: z.string().trim().min(1, "Please enter your name").max(100),
+  email: z.string().trim().email("Invalid email address").max(255),
+  message: z.string().trim().min(1, "Please write a message").max(1000, "Maximum 1000 characters"),
 });
 
 const Contact = () => {
@@ -28,17 +28,18 @@ const Contact = () => {
       return;
     }
     setErrors({});
-    toast.success("تم إرسال رسالتك بنجاح، سأتواصل معك قريباً ✨");
+    toast.success("Your message was sent successfully — I'll be in touch soon ✨");
     setForm({ name: "", email: "", message: "" });
   };
 
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">
       <header className="max-w-3xl mb-12">
-        <p className="text-accent font-semibold mb-2">تواصلي معي</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">لنبدأ محادثة</h1>
+        <p className="text-accent font-semibold mb-2">Contact Me</p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Start a Conversation</h1>
         <p className="text-lg text-muted-foreground leading-loose">
-          سواء لفرصة عمل، تعاون في مشروع تقني، أو نقاش في هندسة الشبكات — يسعدني تواصلك.
+          Whether it's a job opportunity, project collaboration, or a discussion about network engineering —
+          I'd love to hear from you.
         </p>
       </header>
 
@@ -50,7 +51,7 @@ const Contact = () => {
               <Mail className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground mb-1">البريد الإلكتروني</p>
+              <p className="text-sm text-muted-foreground mb-1">Email</p>
               <p className="font-semibold break-all">your.email@example.com</p>
             </div>
           </a>
@@ -70,8 +71,8 @@ const Contact = () => {
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground mb-1">الموقع</p>
-              <p className="font-semibold">المملكة العربية السعودية</p>
+              <p className="text-sm text-muted-foreground mb-1">Location</p>
+              <p className="font-semibold">Saudi Arabia</p>
             </div>
           </div>
         </aside>
@@ -79,18 +80,18 @@ const Contact = () => {
         {/* Form */}
         <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-soft space-y-5">
           <div>
-            <label htmlFor="name" className="block text-sm font-semibold mb-2">الاسم</label>
+            <label htmlFor="name" className="block text-sm font-semibold mb-2">Name</label>
             <Input
               id="name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              placeholder="اسمك الكامل"
+              placeholder="Your full name"
               maxLength={100}
             />
             {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold mb-2">البريد الإلكتروني</label>
+            <label htmlFor="email" className="block text-sm font-semibold mb-2">Email</label>
             <Input
               id="email"
               type="email"
@@ -102,20 +103,20 @@ const Contact = () => {
             {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
           </div>
           <div>
-            <label htmlFor="message" className="block text-sm font-semibold mb-2">الرسالة</label>
+            <label htmlFor="message" className="block text-sm font-semibold mb-2">Message</label>
             <Textarea
               id="message"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              placeholder="اكتبي رسالتك هنا..."
+              placeholder="Write your message here..."
               rows={6}
               maxLength={1000}
             />
             {errors.message && <p className="text-destructive text-sm mt-1">{errors.message}</p>}
           </div>
           <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
-            إرسال الرسالة
-            <Send className="w-4 h-4 mr-2" />
+            Send Message
+            <Send className="w-4 h-4 ml-2" />
           </Button>
         </form>
       </div>

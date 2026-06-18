@@ -3,23 +3,23 @@ import { Cpu, Network, ShieldCheck, Users, Briefcase, CheckCircle2 } from "lucid
 const skillGroups = [
   {
     icon: Cpu,
-    title: "مهارات تقنية",
-    items: ["Python", "Linux / CLI", "تحليل البيانات", "SQL", "Git & GitHub", "أساسيات تطوير الويب"],
+    title: "Technical Skills",
+    items: ["Python", "Linux / CLI", "Data Analysis", "SQL", "Git & GitHub", "Web Development Basics"],
   },
   {
     icon: Network,
-    title: "هندسة الشبكات",
-    items: ["تصميم الشبكات (LAN/WAN)", "Cisco IOS", "Routing & Switching", "بروتوكولات TCP/IP", "VLAN & VPN", "محاكاة Packet Tracer / GNS3"],
+    title: "Network Engineering",
+    items: ["LAN / WAN Design", "Cisco IOS", "Routing & Switching", "TCP/IP Protocols", "VLAN & VPN", "Packet Tracer / GNS3"],
   },
   {
     icon: ShieldCheck,
-    title: "أمن الشبكات",
-    items: ["مبادئ Cybersecurity", "Firewalls & IDS/IPS", "تحليل الثغرات", "تشفير الاتصالات", "إدارة الهوية والصلاحيات"],
+    title: "Network Security",
+    items: ["Cybersecurity Principles", "Firewalls & IDS/IPS", "Vulnerability Analysis", "Communication Encryption", "Identity & Access Management"],
   },
   {
     icon: Users,
-    title: "مهارات ناعمة وإدارية",
-    items: ["إدارة المشاريع التقنية", "العمل ضمن فريق", "حل المشكلات", "التواصل الفعّال", "التوثيق التقني", "العرض والتقديم"],
+    title: "Soft & Management Skills",
+    items: ["Technical Project Management", "Teamwork", "Problem Solving", "Effective Communication", "Technical Documentation", "Presentation"],
   },
 ];
 
@@ -27,10 +27,11 @@ const Skills = () => {
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">
       <header className="max-w-3xl mb-12">
-        <p className="text-accent font-semibold mb-2">المهارات والخبرات</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">قدرات هندسية متكاملة</h1>
+        <p className="text-accent font-semibold mb-2">Skills & Experience</p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Well-Rounded Engineering Capabilities</h1>
         <p className="text-lg text-muted-foreground leading-loose">
-          مزيج من المهارات التقنية المتخصصة في الشبكات والاتصالات، إلى جانب القدرات الإدارية والناعمة التي تدعم نجاح أي مشروع تقني.
+          A blend of specialized technical skills in networking and communications, alongside the management
+          and soft skills that drive any successful technical project.
         </p>
       </header>
 
@@ -59,27 +60,27 @@ const Skills = () => {
       <section>
         <div className="flex items-center gap-3 mb-8">
           <Briefcase className="w-6 h-6 text-accent" />
-          <h2 className="text-3xl font-bold">الخبرات العملية</h2>
+          <h2 className="text-3xl font-bold">Professional Experience</h2>
         </div>
 
-        <div className="relative border-r-2 border-accent/30 pr-6 md:pr-8">
+        <div className="relative border-l-2 border-accent/30 pl-6 md:pl-8">
           <div className="relative mb-8">
-            <span className="absolute -right-[34px] md:-right-[42px] top-1 w-4 h-4 rounded-full bg-accent ring-4 ring-background" />
+            <span className="absolute -left-[34px] md:-left-[42px] top-1 w-4 h-4 rounded-full bg-accent ring-4 ring-background" />
             <div className="bg-card border border-border rounded-2xl p-6 shadow-soft">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                <h3 className="text-xl font-bold">التدريب التعاوني (Co-op)</h3>
-                <span className="text-sm px-3 py-1 rounded-full bg-secondary text-secondary-foreground">٧ أشهر</span>
+                <h3 className="text-xl font-bold">Cooperative Training (Co-op)</h3>
+                <span className="text-sm px-3 py-1 rounded-full bg-secondary text-secondary-foreground">7 months</span>
               </div>
               <p className="text-muted-foreground mb-4">
-                مركز التدريب وتطوير الأنظمة — تدريب ميداني مكثّف
+                Training & Systems Development Center — intensive field training
               </p>
               <ul className="space-y-2">
                 {[
-                  "المشاركة في تصميم وتطوير تطبيق ويب مركزي لإدارة وتسجيل البيانات.",
-                  "العمل على ملف تحليل بيانات خاص بالمركز واستخراج رؤى تشغيلية.",
-                  "دعم البنية الشبكية واختبار إعدادات الأجهزة وحلول الاتصال.",
-                  "توثيق العمليات التقنية وإعداد تقارير دورية للفريق.",
-                  "التعاون مع مهندسين متعددي التخصصات ضمن بيئة عمل احترافية.",
+                  "Contributed to designing and developing a centralized web application for managing and recording data.",
+                  "Worked on a data-analysis file for the center, extracting actionable operational insights.",
+                  "Supported the network infrastructure and tested device configurations and connectivity solutions.",
+                  "Documented technical processes and prepared periodic reports for the team.",
+                  "Collaborated with multidisciplinary engineers in a professional work environment.",
                 ].map((task) => (
                   <li key={task} className="flex gap-2 text-foreground/80">
                     <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />

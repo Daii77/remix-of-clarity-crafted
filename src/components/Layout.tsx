@@ -4,11 +4,11 @@ import { Menu, X, Network } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { to: "/", label: "الرئيسية" },
-  { to: "/skills", label: "المهارات والخبرات" },
-  { to: "/projects", label: "المشاريع" },
-  { to: "/passions", label: "الاهتمامات" },
-  { to: "/contact", label: "تواصل معي" },
+  { to: "/", label: "Home" },
+  { to: "/skills", label: "Skills & Experience" },
+  { to: "/projects", label: "Projects" },
+  { to: "/passions", label: "Passions" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const Layout = () => {
@@ -22,7 +22,7 @@ const Layout = () => {
             <span className="w-9 h-9 rounded-lg gradient-hero flex items-center justify-center text-primary-foreground">
               <Network className="w-5 h-5" />
             </span>
-            <span className="text-lg">المحفظة</span>
+            <span className="text-lg">Portfolio</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -48,7 +48,7 @@ const Layout = () => {
           <button
             className="md:hidden p-2 rounded-md hover:bg-secondary"
             onClick={() => setOpen(!open)}
-            aria-label="القائمة"
+            aria-label="Menu"
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -86,7 +86,7 @@ const Layout = () => {
 
       <footer className="border-t border-border py-8 mt-16">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} - مهندسة شبكات وأنظمة اتصالات · جامعة حائل
+          © {new Date().getFullYear()} — Network & Communication Systems Engineer · University of Hail
         </div>
       </footer>
     </div>
