@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom";
 import { ArrowRight, GraduationCap, Network, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    const top = el.getBoundingClientRect().top + window.scrollY - 70;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+};
 
 const Home = () => {
   return (
@@ -30,14 +37,12 @@ const Home = () => {
                 a clear vision, and meticulous attention to detail.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <Link to="/projects">
-                    View My Projects
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
+                <Button onClick={() => scrollTo("projects")} size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                  View My Projects
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button asChild size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white">
-                  <Link to="/contact">Get in Touch</Link>
+                <Button onClick={() => scrollTo("contact")} size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white">
+                  Get in Touch
                 </Button>
               </div>
             </div>
